@@ -1,8 +1,10 @@
 import React from "react";
+import { useItemsContext } from "./CartContext";
 
 type Props = {};
 
 const NavBar = (props: Props) => {
+  const items = useItemsContext();
   return (
     <nav className="flex items-center h-16 w-screen px-5 py-3 bg-darkGrey text-gray-50">
       {/* Logo */}
@@ -58,7 +60,7 @@ const NavBar = (props: Props) => {
       <div className="flex h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
         <div className=" relative">
           <span className=" absolute left-3 bottom-4 text-lg font-bold text-darkOrange ">
-            0
+            {items.length}
           </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
