@@ -14,7 +14,7 @@ function Checkout({}: Props) {
   };
   const totalPrice = getTotalPrice();
   return (
-    <div className="flex flex-col justify-center items-center py-7 bg-white h-fit">
+    <div className="flex flex-col col-span-2 md:col-span-1 justify-center items-center py-7 bg-white h-fit">
       <div className="pb-5">
         <h1 className=" text-lg">
           Subtotal({cartItems.length + " items"}):

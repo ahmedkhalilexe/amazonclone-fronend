@@ -18,10 +18,10 @@ export default function Home() {
       <header>
         <NavBar />
       </header>
-      <main className=" relative overflow-x-hidden ">
+      <main className=" relative overflow-x- h-full ">
         <ImageSlider />
         <div className="flex flex-col gap-7 absolute px-7 w-full top-1/2 left-0 bg-gradient-to-b from-gray-300/5 via-gray-300 to-gray-300">
-          <div className="grid grid-cols-4 gap-7">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-7">
             {products.map((product, idx) => (
               <Product
                 key={idx}

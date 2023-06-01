@@ -13,7 +13,7 @@ function Cart({}: Props) {
       <header>
         <NavBar />
       </header>
-      <main className=" grid grid-cols-3 gap-7 px-7 py-3 bg-gray-200">
+      <main className=" grid grid-cols-2 md:grid-cols-3 gap-7 px-7 py-3 bg-gray-200">
         <CartItemsList />
         <Checkout />
       </main>

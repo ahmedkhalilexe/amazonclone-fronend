@@ -13,7 +13,7 @@ function Product({ title, price, shipping, image }: Props) {
   const [isAddedToCart, setIsAddedToCart] = useState<boolean>(false);
   const dispatchItems = useDispatchContext();
   return (
-    <div className=" h-96 px-5 bg-white">
+    <div className=" h-fit py-3 px-5 bg-white">
       <div className="flex justify-center w-full  ">
         <Image src={image} alt="" className=" object-cover w-3/4" />
       </div>
@@ -34,7 +34,7 @@ function Product({ title, price, shipping, image }: Props) {
             });
             setIsAddedToCart(!isAddedToCart);
           }}
-          className=" mt-3 rounded-md bg-gradient-to-b from-lightOrange to-darkOrange outline outline-1 outline-darkOrange px-4 py-1"
+          className=" mt-3 rounded-md bg-gradient-to-b from-lightOrange to-darkOrange outline outline-1 outline-darkOrange px-1 py-1 text-sm md:px-4 md:text-base"
         >
           Add to cart
         </button>
@@ -52,7 +52,7 @@ function Product({ title, price, shipping, image }: Props) {
             });
             setIsAddedToCart(!isAddedToCart);
           }}
-          className=" mt-3 rounded-md bg-gradient-to-b from-lightOrange to-darkOrange outline outline-1 outline-darkOrange px-4 py-1"
+          className=" mt-3 rounded-md bg-gradient-to-b from-lightOrange to-darkOrange outline outline-1 outline-darkOrange px-1 py-1 text-sm md:px-4 md:text-base"
         >
           Delete from cart
         </button>

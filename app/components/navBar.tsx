@@ -7,14 +7,14 @@ type Props = {};
 const NavBar = (props: Props) => {
   const cartItems = useItemsContext();
   return (
-    <nav className="flex items-center h-16 w-screen px-5 py-3 bg-darkGrey text-gray-50">
+    <nav className=" flex flex-col md:flex-row items-center h-fit w-screen px-5 py-3 bg-darkGrey text-gray-50">
       {/* Logo */}
       <div className=" text-2xl px-2 py-1 font-bold hover:outline outline-1 cursor-pointer">
         <Link href={"/"}>Zamazon</Link>
       </div>
       {/* search bar */}
       <div className="flex basis-full h-full mx-4 text-black">
-        <select className=" h-full px-2 py-1 text-sm text-gray-600 hover:text-gray-950 rounded-s-md border-e-2 bg-gray-100 hover:bg-gray-200 border-gray-300 cursor-pointer">
+        <select className=" px-2 py-1 text-sm text-gray-600 hover:text-gray-950 rounded-s-md border-e-2 bg-gray-100 hover:bg-gray-200 border-gray-300 cursor-pointer">
           <option value={"all"} defaultChecked>
             all
           </option>
@@ -45,29 +45,33 @@ const NavBar = (props: Props) => {
         </div>
       </div>
       {/* left side of nav */}
-      <div>
-        <div className="h-full px-2 py-1 text-center hover:outline outline-1 cursor-pointer">
-          ENG
+      <div className=" flex py-2">
+        <div>
+          <div className="h-full px-2 py-1 text-center hover:outline outline-1 cursor-pointer">
+            ENG
+          </div>
         </div>
-      </div>
-      <div className="h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
-        <div className=" text-xs ">Hello, sign in</div>
-        <div className=" text-sm font-bold">Account&nbsp;&&nbsp;Lists</div>
-      </div>
-      <div className=" h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
-        <div className=" text-xs ">Returns</div>
-        <div className=" text-sm font-bold">&&nbsp;Orders</div>
-      </div>
-      <div className="flex h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
-        <div className=" relative">
-          <span className=" text-lg font-bold mr-2 text-darkOrange ">
-            {cartItems.length}
-          </span>
+        <div className="h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
+          <Link href={"/signin"}>
+            <div className=" text-xs ">Hello, sign in</div>
+            <div className=" text-sm font-bold">Account&nbsp;&&nbsp;Lists</div>
+          </Link>
         </div>
-        <Link href={"/cart"} className=" text-lg font-bold">
-          Cart
-        </Link>
-        {/* <div className=" text-lg font-bold">cart</div> */}
+        <div className=" h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
+          <div className=" text-xs ">Returns</div>
+          <div className=" text-sm font-bold">&&nbsp;Orders</div>
+        </div>
+        <div className="flex h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
+          <div className=" relative">
+            <span className=" text-lg font-bold mr-2 text-darkOrange ">
+              {cartItems.length}
+            </span>
+          </div>
+          <Link href={"/cart"} className=" text-lg font-bold">
+            Cart
+          </Link>
+          {/* <div className=" text-lg font-bold">cart</div> */}
+        </div>
       </div>
     </nav>
   );
