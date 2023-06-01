@@ -1,15 +1,16 @@
 import React from "react";
 import { useItemsContext } from "./CartContext";
+import Link from "next/link";
 
 type Props = {};
 
 const NavBar = (props: Props) => {
-  const items = useItemsContext();
+  const cartItems = useItemsContext();
   return (
     <nav className="flex items-center h-16 w-screen px-5 py-3 bg-darkGrey text-gray-50">
       {/* Logo */}
       <div className=" text-2xl px-2 py-1 font-bold hover:outline outline-1 cursor-pointer">
-        Zamazon
+        <Link href={"/"}>Zamazon</Link>
       </div>
       {/* search bar */}
       <div className="flex basis-full h-full mx-4 text-black">
@@ -59,25 +60,14 @@ const NavBar = (props: Props) => {
       </div>
       <div className="flex h-full px-2 py-1 hover:outline outline-1 cursor-pointer">
         <div className=" relative">
-          <span className=" absolute left-3 bottom-4 text-lg font-bold text-darkOrange ">
-            {items.length}
+          <span className=" text-lg font-bold mr-2 text-darkOrange ">
+            {cartItems.length}
           </span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className=" aspect-square w-8"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-            />
-          </svg>
         </div>
-        <div className=" font-bold">cart</div>
+        <Link href={"/cart"} className=" text-lg font-bold">
+          Cart
+        </Link>
+        {/* <div className=" text-lg font-bold">cart</div> */}
       </div>
     </nav>
   );
