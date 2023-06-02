@@ -39,7 +39,7 @@ function SignIn({}: Props) {
       </div>
       <p className=" text-sm text-gray-500 mt-4">New to Zamazon?</p>
       <button className="md:w-3/12 px-2 rounded-md bg-gradient-to-b from-white to-gray-200 outline outline-1 outline-gray-400 my-2 py-1">
-        Create your Zamazon account
+        <Link href={"/signup"}>Create your Zamazon account</Link>
       </button>
     </div>
   );
