@@ -1,19 +1,11 @@
 "use client";
-import sample from "./assets/imgaes/sample2.jpg";
 import NavBar from "./components/navBar";
 import ImageSlider from "./components/ImageSlider";
 import Product from "./components/product";
 import Link from "next/link";
 import CartProvider from "./components/CartContext";
-import { faker } from "@faker-js/faker";
 import { products } from "./assets/consts/products";
 export default function Home() {
-  faker.seed(123);
-  // const products = [...Array(20)].map(() => ({
-  //   title: faker.commerce.productName(),
-  //   price: parseInt(faker.commerce.price()),
-  //   shipping: parseInt(faker.commerce.price()),
-  // }));
   return (
     <CartProvider>
       <header>

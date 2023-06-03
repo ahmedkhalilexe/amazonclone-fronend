@@ -1,10 +1,10 @@
-import ps4 from "../imgaes/ps4.jpg"
-import razermouse from "../imgaes/razermouse.jpg"
-import steelseriesmouse from "../imgaes/steelseriesmouse.jpg"
-import asusroglaptop from "../imgaes/asusroglaptop.jpg"
-import hpvictuslaptop from "../imgaes/hpvictuslaptop.jpg"
-import rtx3060 from "../imgaes/rtx3060.jpg"
-import corsaircase from "../imgaes/corsaircase.jpg"
+import ps4 from "../images/ps4.jpg"
+import razermouse from "../images/razermouse.jpg"
+import steelseriesmouse from "../images/steelseriesmouse.jpg"
+import asusroglaptop from "../images/asusroglaptop.jpg"
+import hpvictuslaptop from "../images/hpvictuslaptop.jpg"
+import rtx3060 from "../images/rtx3060.jpg"
+import corsaircase from "../images/corsaircase.jpg"
 export const products = [
     {
         title : "Playstation sony 4, 500GB, Black",
