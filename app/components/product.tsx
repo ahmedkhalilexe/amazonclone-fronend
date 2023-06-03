@@ -13,9 +13,9 @@ function Product({ title, price, shipping, image }: Props) {
   const [isAddedToCart, setIsAddedToCart] = useState<boolean>(false);
   const dispatchItems = useDispatchContext();
   return (
-    <div className=" h-fit py-3 px-5 bg-white">
+    <div className=" h-80 py-3 px-5 bg-white">
       <div className="flex justify-center w-full  ">
-        <Image src={image} alt="" className=" object-cover w-3/4" />
+        <Image src={image} alt="" className=" w-10/12 max-h-28" />
       </div>
       <h1 className="line-clamp-3 leading-5">{title}</h1>
       <p className=" mt-2 font-bold">{`$${price}`}</p>

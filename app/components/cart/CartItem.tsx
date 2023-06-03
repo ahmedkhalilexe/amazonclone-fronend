@@ -13,9 +13,13 @@ function CartItem({ Item }: Props) {
     <>
       <div className="flex w-full py-2 mb-3 justify-between items-center">
         <div className=" flex">
-          <Image src={Item.image} alt="" />
+          <Image
+            src={Item.image}
+            className=" h-24 w-32 md:h-32 md:w-48 "
+            alt=""
+          />
           <div>
-            <h1>{Item.title}</h1>
+            <h1 className="line-clamp-3 leading-5">{Item.title}</h1>
             <button
               className="text-blue-600 hover:underline text-sm
               "

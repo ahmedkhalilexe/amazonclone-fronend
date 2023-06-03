@@ -6,13 +6,14 @@ import Product from "./components/product";
 import Link from "next/link";
 import CartProvider from "./components/CartContext";
 import { faker } from "@faker-js/faker";
+import { products } from "./assets/consts/products";
 export default function Home() {
   faker.seed(123);
-  const products = [...Array(20)].map(() => ({
-    title: faker.commerce.productName(),
-    price: parseInt(faker.commerce.price()),
-    shipping: parseInt(faker.commerce.price()),
-  }));
+  // const products = [...Array(20)].map(() => ({
+  //   title: faker.commerce.productName(),
+  //   price: parseInt(faker.commerce.price()),
+  //   shipping: parseInt(faker.commerce.price()),
+  // }));
   return (
     <CartProvider>
       <header>
@@ -28,19 +29,19 @@ export default function Home() {
                 title={product.title}
                 price={product.price}
                 shipping={product.shipping}
-                image={sample}
+                image={product.image}
               />
             ))}
           </div>
           <div className=" w-full h-[2px] bg-gray-400"></div>
           <div className=" flex flex-col items-center gap-2 justify-center py-4">
             <button className="rounded-md bg-gradient-to-b from-lightOrange to-darkOrange outline outline-1 outline-darkOrange px-20 py-1">
-              Sign in
+              <Link href={"/signin"}>Sign in</Link>
             </button>
             <p className=" text-sm">
               New customer?
               <Link
-                href={"#"}
+                href={"/signup"}
                 className=" text-blue-600 hover:underline hover:text-darkOrange "
               >
                 {" "}
@@ -49,6 +50,17 @@ export default function Home() {
             </p>
           </div>
           <div className=" w-full h-[2px] bg-gray-400"></div>
+          <div className="flex justify-center items-center w-full h-40">
+            Made with &#10084; by{" "}
+            <span>
+              <Link
+                href="https://github.com/khalilrume "
+                className=" font-bold underline text-gray-900"
+              >
+                A.Khalil
+              </Link>
+            </span>
+          </div>
         </div>
       </main>
     </CartProvider>
