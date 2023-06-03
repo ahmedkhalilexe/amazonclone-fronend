@@ -1,6 +1,7 @@
 import React from "react";
 import { useItemsContext } from "./CartContext";
 import Link from "next/link";
+import { categories } from "../assets/consts/categories";
 
 type Props = {};
 
@@ -18,9 +19,9 @@ const NavBar = (props: Props) => {
           <option value={"all"} defaultChecked>
             all
           </option>
-          <option value={"test1"}>test1</option>
-          <option value={"test2"}>test2</option>
-          <option value={"test3"}>test3</option>
+          {categories.map((category) => (
+            <option value={category}>{category}</option>
+          ))}
         </select>
         <input
           type="text"
