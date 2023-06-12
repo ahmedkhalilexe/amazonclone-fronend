@@ -19,8 +19,10 @@ const NavBar = (props: Props) => {
           <option value={"all"} defaultChecked>
             all
           </option>
-          {categories.map((category) => (
-            <option value={category}>{category}</option>
+          {categories.map((category, idx) => (
+            <option key={idx} value={category}>
+              {category}
+            </option>
           ))}
         </select>
         <input
